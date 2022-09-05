@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import HeaderOptions from './headerOptions'
 import {
-    Box,
     Button,
     Container
 } from '@mui/material';
@@ -26,28 +25,26 @@ const Header = () => {
     const [selected, setSelected] = useState('Hospedagens')
 
     return (
-        <Box sx={{ bgcolor: 'blue' }}>
-            <Container sx={{
-                display: { xs: 'none', md: 'flex' },
-                paddingY: '10px 0'
-            }}>
-                {button.map((item, key) => (
-                    <Button
-                        key={key}
-                        onClick={() => setSelected(item.title)}
-                        sx={{
-                            mr: 2,
-                            color: 'white',
-                            border: `${item.title === selected ? '1px solid white' : '1px solid transparent'}`,
-                            borderRadius: '25px',
-                            fontWeight: '700',
-                            textTransform: 'none'
-                        }}>
-                        <HeaderOptions Icon={item.icon} title={item.title} />
-                    </Button>
-                ))}
-            </Container>
-        </Box>
+        <Container sx={{
+            display: { xs: 'none', md: 'flex' },
+            paddingY: '10px'
+        }}>
+            {button.map((item, key) => (
+                <Button
+                    key={key}
+                    onClick={() => setSelected(item.title)}
+                    sx={{
+                        mr: 2,
+                        color: 'white',
+                        border: `${item.title === selected ? '1px solid white' : '1px solid transparent'}`,
+                        borderRadius: '25px',
+                        fontWeight: '700',
+                        textTransform: 'none'
+                    }}>
+                    <HeaderOptions Icon={item.icon} title={item.title} />
+                </Button>
+            ))}
+        </Container>
     )
 }
 
