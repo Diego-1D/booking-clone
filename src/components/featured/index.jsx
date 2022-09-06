@@ -1,11 +1,11 @@
 import React from 'react'
+import { Card, CardTitle } from '../../theme/globalStyle';
 import {
-    Box,
-    Card,
-    CardContent,
-    CardMedia,
-    Grid,
-    Typography
+  Box,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography
 } from '@mui/material';
 
 const Featured = () => {
@@ -36,23 +36,18 @@ const Featured = () => {
       <Grid container spacing={2}>
         {cards.map((item, key) => (
           <Grid item key={key} xs={12} sm={6} md={4}>
-            <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+            <Card>
               <CardMedia
-                sx={{ height: '220px' }}
+                sx={{
+                  height: '220px',
+                  borderRadius: '5px 5px 0 0'
+                }}
                 component="img"
                 src={item.img}
                 alt={item.name}
               />
               <CardContent sx={{ flexGrow: 1 }}>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  sx={{
-                    fontSize: '18px',
-                    fontWeight: 'bold'
-                  }}>
-                  {item.name}
-                </Typography>
+                <CardTitle> {item.name}</CardTitle>
                 <Typography sx={{
                   fontSize: '16px',
                   color: '#6b6a6a'
