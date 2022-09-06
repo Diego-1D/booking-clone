@@ -7,7 +7,7 @@ import {
     Typography
 } from '@mui/material';
 
-const wrapper= {
+const wrapper = {
     display: { xs: 'none', md: 'flex' },
     justifyContent: 'space-between',
     padding: '0.5rem'
@@ -27,7 +27,7 @@ const ListItem = styled("li")(({ }) => ({
 const Footer = () => {
 
     return (
-        <Container>
+        <Container sx={{paddingY:'1rem'}}>
             <Box sx={wrapper}>
                 <List>
                     <ListItem >Países</ListItem>
@@ -78,7 +78,13 @@ const Footer = () => {
                     <ListItem>Contato corporativo</ListItem>
                 </List>
             </Box>
-            <Typography variant='span'>Direitos autorais © 1996–2022 Booking.com™. Todos os direitos reservados.</Typography>
+            <Typography
+                variant="caption"
+                display="block"
+                gutterBottom
+            >
+                Direitos autorais © 1996–2022 Booking.com™. Todos os direitos reservados.
+            </Typography>
         </Container>
     )
 }
