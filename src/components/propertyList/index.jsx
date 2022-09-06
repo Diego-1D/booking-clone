@@ -1,7 +1,7 @@
 import React from 'react'
+import { Card, CardTitle } from '../../theme/globalStyle';
 import {
     Box,
-    Card,
     CardContent,
     CardMedia,
     Grid,
@@ -39,24 +39,21 @@ const PropertyList = () => {
     return (
         <Box>
             <Typography variant="h5" sx={{ py: 2 }}>Pesquise por tipo de acomodação</Typography>
-            <Grid container spacing={2} justifyContent="space-between" alignItems="center">
+            <Grid container spacing={2}>
                 {cards.map((item, key) => (
                     <Grid item key={key} xs={12} sm={6} md={3}>
-                        <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <Card>
                             <CardMedia
-                                sx={{ height: '180px' }}
+                                sx={{
+                                    height: '180px',
+                                    borderRadius: '5px 5px 0 0'
+                                }}
                                 component="img"
                                 src={item.img}
                                 alt={item.name}
                             />
                             <CardContent sx={{ flexGrow: 1 }}>
-                                <Typography gutterBottom variant="h6"
-                                    sx={{
-                                        fontSize: '16px',
-                                        fontWeight: 'bold'
-                                    }}>
-                                    {item.name}
-                                </Typography>
+                                <CardTitle>{item.name}</CardTitle>
                                 <Typography sx={{
                                     fontSize: '14px',
                                     color: '#6b6a6a'
