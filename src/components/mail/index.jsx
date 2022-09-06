@@ -9,6 +9,43 @@ import {
     Typography
 } from '@mui/material'
 
+const container = {
+    paddingTop: 4,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#FFF'
+}
+
+const inputArea = {
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    alignItems: 'center',
+    gap: '5px',
+    marginY: '20px'
+}
+
+const input = {
+    width: '300px',
+    height: '40px',
+    paddingX: '10px',
+    bgcolor: '#FFF',
+    border: '1px solid tranparent',
+    borderRadius: '5px'
+}
+
+const button = {
+    color: '#FFF',
+    bgcolor: '#1976d2',
+    height: '40px',
+    width: '150px',
+    marginTop: { xs: '5px', md: '0' },
+    ':hover': {
+        bgcolor: '#33539c',
+    }
+}
+
 const Mail = () => {
 
     const title = [
@@ -19,21 +56,20 @@ const Mail = () => {
         'Torne-se um afiliado',
         'Booking.com para Empresas'
     ]
+
     return (
-        <Box sx={{ bgcolor: '#002984' }}>
-            <Container sx={{ pt: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
+        <Box sx={{ bgcolor: '#002984', paddingY: '1rem' }}>
+            <Container sx={container}>
                 <Typography variant='h5'>Economize tempo, economize dinheiro!</Typography>
                 <Typography variant='subtitle1'>Inscreva-se e enviaremos as melhores ofertas para você</Typography>
-                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', gap: '5px', my: '20px' }}>
+                <Box sx={inputArea}>
                     <Input
                         disableUnderline={true}
                         type='text'
-                        sx={{ width: '300px', height: '40px', px: '10px', bgcolor: 'white', border: '1px solid tranparent', borderRadius: '5px' }}
+                        sx={input}
                         placeholder='Seu e-mail'
                     />
-                    <Button sx={{ color: 'white', bgcolor: '#1976d2', height: '40px', width: '150px', mt: { xs: '5px', md: '0' } }} >
-                        Increva-se
-                    </Button>
+                    <Button sx={button}>Increva-se</Button>
                 </Box>
             </Container>
             <Box>
@@ -43,7 +79,7 @@ const Mail = () => {
                             display: 'flex',
                             flexDirection: { xs: 'column', md: 'row' },
                             textDecoration: 'underline',
-                            color: 'white',
+                            color: '#FFF',
                         }}>
                         {title.map((name) => (
                             <ListItemButton key={name}>
