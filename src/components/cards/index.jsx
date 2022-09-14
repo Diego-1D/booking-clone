@@ -1,50 +1,95 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardTitle } from '../../theme/globalStyle';
+import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { hotelList } from '../../data';
 
 const card = {
+    padding: '15px',
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
     width: '75%',
     height: '250px',
-    bgcolor: '#e1f5fe',
-    border: ' 1px solid #1976d2',
+    border: ' 1px solid #ccc',
 }
 
+const caption = {
+    fontSize: '12px',
+    color: '#1976d2',
+    textDecoration: 'underline',
+    textDecorationColor: '#1976d2'
+}
+
+const button = {
+    marginTop: '12px',
+    fontSize: '13px',
+    fontWeight: 'bold',
+    color: '#FFF',
+    bgcolor: '#1976d2',
+    textTransform: 'none',
+    borderRadius: '2px',
+
+    ':hover': {
+        bgcolor: 'blue'
+    }
+
+}
 const Cards = () => {
 
     return (
-        <Card sx={card}>
-            <CardMedia
-                component="img"
-                sx={{ height: '200px', objectFit: 'contain' }}
-                image="https://tse1.mm.bing.net/th?id=OIP.jzBkWW1z0k9b2YfWv3sPBgHaFT&pid=Api&P=0"
-                alt="Live from space album cover"
-
-            />
-            <Box sx={{ display: 'flex', flexDirection: 'column', }}>
-                <CardContent >
-                    <Typography variant="h6" color='#1976d2' sx={{ fontWeight: 'bold' }}>
-                        Rio de Janeiro
-                    </Typography>
-                    <Typography color='#000' sx={{ fontSize: '12px' }}>
-                        Oferecendo Wi-Fi gratuito e piscina na cobertura, com vista da cidade,
-                        academia e sauna, o Meliá Brasil 21 está localizado entre a Torre de TV
-                        e o Parque da Cidade, em Brasília.
-                    </Typography>
-                </CardContent>
-            </Box>
-            <CardContent sx={{}} >
-                <CardTitle>Fabuloso</CardTitle>
-                <Typography>1.235 avaliações</Typography>
-                <Typography>Localização 9,4</Typography>
-            </CardContent>
-        </Card>
+        <>
+            {hotelList.map((index) => (
+                <Card sx={card}>
+                    <CardMedia sx={{
+                        height: '217px',
+                        width: '217px',
+                        borderRadius: '4px'
+                    }}
+                        component='img'
+                        image={index.img}
+                        alt={index.hotelname}
+                    />
+                    <CardContent sx={{ flex: 1 }}>
+                        <Typography
+                            variant='h6'
+                            color='#1976d2'
+                            sx={{ fontWeight: 'bold' }}
+                        >{index.hotelname}
+                        </Typography>
+                        <Box sx={{ display: 'flex', gap: '10px' }}>
+                            {index.tags.map((tag) => (
+                                <Typography sx={caption}>{tag}</Typography>
+                            ))}
+                            <Typography variant='caption'>{index.distance}</Typography>
+                        </Box>
+                        <Typography sx={{ fontSize: '12px', marginTop: '5px' }}>
+                            {index.description}
+                        </Typography>
+                    </CardContent>
+                    <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
+                            <Box sx={{ textAlign: 'end' }}>
+                                <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
+                                    {index.status}
+                                </Typography>
+                                <Typography variant='caption' color='#6b6a6a'>
+                                    {index.assessments} avaliações
+                                </Typography>
+                            </Box>
+                            <span
+                                style={{
+                                    padding: '5px',
+                                    marginRight: '5px',
+                                    borderRadius: '7px 7px 7px 0',
+                                    backgroundColor: '#002984',
+                                    color: 'white'
+                                }}>{index.execellent}</span>
+                        </Box>
+                        <Typography variant='subtitle2' color='#1976d2' sx={{ fontWeight: 'bold' }}>
+                            Localização {index.location}
+                        </Typography>
+                        <Button sx={button}>Visualizar preços</Button>
+                    </CardContent>
+                </Card >
+            ))}
+        </>
     );
 }
 
