@@ -16,9 +16,13 @@ const HotelList = () => {
         <Navbar />
         <Header />
       </Box>
-      <Container sx={{ paddingY: '20px', display: 'flex', justifyContent: 'space-between' }} >
+      <Container sx={{
+        paddingY: '30px',
+        display: 'flex',
+        justifyContent: 'space-between'
+      }}>
         <SearchVertical />
-        <Cards/>
+        <Cards />
       </Container>
       <Mail />
       <Footer />

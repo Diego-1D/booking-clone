@@ -12,7 +12,7 @@ const Hero = () => {
         justifyContent: 'center',
         paddingY: '4rem',
         gap: '1rem',
-        color: 'white'
+        color: '#FFF'
     }
 
     return (

@@ -4,9 +4,12 @@ import { CalendarMonthOutlined, Search } from '@mui/icons-material';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import { Box, Button, Container, Input, Typography } from '@mui/material'
+import { Box, Input, Typography } from '@mui/material'
+import { Button } from '../../theme/globalStyle';
 
 const container = {
+    top: '30px',
+    position: 'sticky',
     display: 'flex',
     flexDirection: 'column',
     width: '270px',
@@ -44,77 +47,70 @@ const SearchVertical = () => {
     };
 
     return (
-            <Box sx={container} >
-                <Typography variant='h6'>Pesquisar</Typography>
-                <Box>
-                    <Typography sx={title}>Destino/nome da acomodação:</Typography>
-                    <Box sx={inputArea} >
-                        <Search sx={{ margin: '0 5px' }} />
-                        <Input
-                            disableUnderline={true}
-                            type='text'
-                            placeholder='Para onde você vai?'
-                            sx={{
-                                border: '1px solid tranparent',
-                                'input::placeholder': {
-                                    fontSize: '12px',
-                                }
-                            }}
-                        />
-                    </Box>
-                </Box>
-                <Box>
-                    <Typography sx={title}>Data de entrega</Typography>
-                    <Box sx={inputArea} >
-                        <CalendarMonthOutlined sx={{ margin: '0 5px' }} />
-                        <Typography onClick={() => setOpenDate(!openDate)} sx={title}>Data de Check-in</Typography>
-                        {openDate &&
-                            <DatePicker
-                                type="date"
-                                locale="pt-br"
-                                dateFormat="dd/MM/yyyy"
-                                selected={startDate}
-                                onChange={onChange}
-                                startDate={startDate}
-                                endDate={endDate}
-                                selectsRange
-                                inline
-                            />
-                        }
-                    </Box>
-                </Box>
-                <Box>
-                    <Typography sx={title}>Data de saída</Typography>
-                    <Box sx={inputArea} >
-                        <CalendarMonthOutlined sx={{ margin: '0 5px' }} />
-                        <Typography onClick={() => setOpenDate(!openDate)} sx={title}>Data de Check-out</Typography>
-                        {openDate &&
-                            <DatePicker
-                                type="date"
-                                locale="pt-br"
-                                dateFormat="dd/MM/yyyy"
-                                selected={startDate}
-                                onChange={onChange}
-                                startDate={startDate}
-                                endDate={endDate}
-                                selectsRange
-                                inline
-                            />
-                        }
-                    </Box>
-                </Box>
+        <Box sx={container} >
+            <Typography variant='h6'>Pesquisar</Typography>
+            <Box>
+                <Typography sx={title}>Destino/nome da acomodação:</Typography>
                 <Box sx={inputArea} >
-                    <Typography sx={title}> 1 adulto · 0 criança · 1 quartos</Typography>
-                </Box>
-                <Box sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    bgcolor: '#1976d2',
-                }}>
-                    <Button sx={{ color: '#FFF' }}>Pesquisar</Button>
+                    <Search sx={{ margin: '0 5px' }} />
+                    <Input
+                        disableUnderline={true}
+                        type='text'
+                        placeholder='Para onde você vai?'
+                        sx={{
+                            border: '1px solid tranparent',
+                            'input::placeholder': {
+                                fontSize: '12px',
+                            }
+                        }}
+                    />
                 </Box>
             </Box>
+            <Box>
+                <Typography sx={title}>Data de entrega</Typography>
+                <Box sx={inputArea} >
+                    <CalendarMonthOutlined sx={{ margin: '0 5px' }} />
+                    <Typography onClick={() => setOpenDate(!openDate)} sx={title}>Data de Check-in</Typography>
+                    {openDate &&
+                        <DatePicker
+                            type="date"
+                            locale="pt-br"
+                            dateFormat="dd/MM/yyyy"
+                            selected={startDate}
+                            onChange={onChange}
+                            startDate={startDate}
+                            endDate={endDate}
+                            selectsRange
+                            inline
+                        />
+                    }
+                </Box>
+            </Box>
+            <Box>
+                <Typography sx={title}>Data de saída</Typography>
+                <Box sx={inputArea} >
+                    <CalendarMonthOutlined sx={{ margin: '0 5px' }} />
+                    <Typography onClick={() => setOpenDate(!openDate)} sx={title}>Data de Check-out</Typography>
+                    {openDate &&
+                        <DatePicker
+                            type="date"
+                            locale="pt-br"
+                            dateFormat="dd/MM/yyyy"
+                            selected={startDate}
+                            onChange={onChange}
+                            startDate={startDate}
+                            endDate={endDate}
+                            selectsRange
+                            inline
+                        />
+                    }
+                </Box>
+            </Box>
+            <Box sx={inputArea} >
+                <Typography sx={title}> 1 adulto · 0 criança · 1 quartos</Typography>
+            </Box>
+            <Button>Pesquisar</Button>
+        </Box>
     )
 }
 

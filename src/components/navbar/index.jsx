@@ -22,7 +22,7 @@ const Navbar = () => {
                 noWrap href=""
                 sx={{
                     fontWeight: "bold",
-                    color: 'white',
+                    color: '#FFF',
                 }} >
                 Booking.com
             </Typography>
@@ -34,7 +34,7 @@ const Navbar = () => {
             }}>
                 <Box>
                     <IconButton>
-                        <Typography sx={{ fontWeight: "bold", color: 'white', }}>BRL</Typography>
+                        <Typography sx={{ fontWeight: "bold", color: '#FFF', }}>BRL</Typography>
                     </IconButton>
                     <IconButton>
                         <img style={{
@@ -43,7 +43,7 @@ const Navbar = () => {
                         }}
                             src='https://t-cf.bstatic.com/static/img/flags/new/48-squared/br/0cf5e55d996fdcf96a2d31733addf5c10bad1f74.png' />
                     </IconButton>
-                    <IconButton sx={{ color: 'white' }}>
+                    <IconButton sx={{ color: '#FFF' }}>
                         <HelpOutlineOutlinedIcon />
                     </IconButton>
                 </Box>
@@ -54,7 +54,7 @@ const Navbar = () => {
                             height: '30px',
                             bgcolor: `${id === 0 ? 'transparent' : '#FFF'}`,
                             color: `${id === 0 ? '#FFF' : '#002984'}`,
-                            border: '1px solid white',
+                            border: '1px solid #FFF',
                             fontSize: '12px',
                             fontWeight: '700',
                             textTransform: 'none',

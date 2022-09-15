@@ -41,8 +41,10 @@ const button = {
     height: '40px',
     width: '150px',
     marginTop: { xs: '5px', md: '0' },
+    textTransform: 'none',
+
     ':hover': {
-        bgcolor: '#33539c',
+        bgcolor: '#0153A4',
     }
 }
 
@@ -69,7 +71,7 @@ const Mail = () => {
                         sx={input}
                         placeholder='Seu e-mail'
                     />
-                    <Button sx={button}>Increva-se</Button>
+                    <Button sx={button}>Inscreva-se</Button>
                 </Box>
             </Container>
             <Box>

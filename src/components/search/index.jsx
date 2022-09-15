@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { Button } from "../../theme/globalStyle";
 import { useNavigate } from 'react-router-dom';
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ptBR from 'date-fns/locale/pt-BR';
 import {
     Box,
-    Button,
     Container,
     Input,
     Typography
@@ -30,17 +30,17 @@ const wrapper = {
     display: 'flex',
     flexDirection: { xs: 'column', md: 'row' },
     borderRadius: '5px',
-    bgcolor:'#FFF',
+    bgcolor: '#FFF',
     border: '4px solid #FEBB02'
 }
 
 const inputArea = {
     flex: 1,
-    paddingY:'8px', 
+    paddingY: '8px',
     display: 'flex',
     alignItems: 'center',
-    borderRight: { xs: 'none', md: '4px solid #FEBB02' }, 
-    borderBottom: { xs: '4px solid #FEBB02', md: 'none' }, 
+    borderRight: { xs: 'none', md: '4px solid #FEBB02' },
+    borderBottom: { xs: '4px solid #FEBB02', md: 'none' },
 }
 
 const personCard = {
@@ -221,19 +221,9 @@ const Search = () => {
                         </Box>
                     }
                 </Box>
-                <Box sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    bgcolor: '#1976d2',
-                }}>
-                    <Button
-                        sx={{ color: '#FFF' }}
-                        onClick={handleSearch}
-                    >
-                        Pesquisar
-                    </Button>
-                </Box>
+                <Button onClick={handleSearch}>
+                    Pesquisar
+                </Button>
             </Box>
         </Container>
     )
