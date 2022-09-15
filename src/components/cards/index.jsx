@@ -1,11 +1,26 @@
 import React from 'react';
-import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { hotelList } from '../../data';
+import { Button } from '../../theme/globalStyle';
+import { 
+    Box, 
+    Card, 
+    CardContent,
+     CardMedia, 
+     Typography 
+    } from '@mui/material';
+
+const container = {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '70%',
+    height: 'auto',
+    gap: '20px',
+}
 
 const card = {
     padding: '15px',
     display: 'flex',
-    width: '75%',
+    width: '100%',
     height: '250px',
     border: ' 1px solid #ccc',
 }
@@ -17,24 +32,12 @@ const caption = {
     textDecorationColor: '#1976d2'
 }
 
-const button = {
-    marginTop: '12px',
-    fontSize: '13px',
-    fontWeight: 'bold',
-    color: '#FFF',
-    bgcolor: '#1976d2',
-    textTransform: 'none',
-    borderRadius: '2px',
 
-    ':hover': {
-        bgcolor: 'blue'
-    }
-
-}
 const Cards = () => {
 
     return (
-        <>
+        <Box sx={container}>
+            <Typography variant='h5'>Resultados: acomodações encontradas</Typography>
             {hotelList.map((index) => (
                 <Card sx={card}>
                     <CardMedia sx={{
@@ -79,17 +82,17 @@ const Cards = () => {
                                     marginRight: '5px',
                                     borderRadius: '7px 7px 7px 0',
                                     backgroundColor: '#002984',
-                                    color: 'white'
+                                    color: '#FFF'
                                 }}>{index.execellent}</span>
                         </Box>
                         <Typography variant='subtitle2' color='#1976d2' sx={{ fontWeight: 'bold' }}>
                             Localização {index.location}
                         </Typography>
-                        <Button sx={button}>Visualizar preços</Button>
+                        <Button>Visualizar preços</Button>
                     </CardContent>
                 </Card >
             ))}
-        </>
+        </Box>
     );
 }
 
