@@ -76,7 +76,7 @@ const FeaturedProperties = () => {
                                                 marginRight: '5px',
                                                 borderRadius: '3px',
                                                 backgroundColor: 'blue',
-                                                color: 'white'
+                                                color: '#FFF'
                                             }}>{item.execellent}</span>Excelente
                                     </Typography>
                                 </Box>
