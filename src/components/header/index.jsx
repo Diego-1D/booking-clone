@@ -26,8 +26,13 @@ const Header = () => {
 
     return (
         <Container sx={{
-            display: { xs: 'none', md: 'flex' },
-            paddingY: '10px'
+            display: 'flex',
+            overflowX: 'auto',
+            paddingY: '10px',
+            
+            '&::-webkit-scrollbar': {
+                display: 'none'
+            }
         }}>
             {button.map((item, key) => (
                 <Button
@@ -35,11 +40,17 @@ const Header = () => {
                     onClick={() => setSelected(item.title)}
                     sx={{
                         mr: 2,
-                        color: 'white',
-                        border: `${item.title === selected ? '1px solid white' : '1px solid transparent'}`,
-                        borderRadius: '25px',
+                        padding: '5px',
+                        color: '#FFF',
+                        border: `${item.title === selected ? '1px solid #FFF' : '1px solid transparent'}`,
+                        bgcolor: `${item.title === selected ? '#33539c' : 'transparent'}`,
+                         borderRadius: '25px',
                         fontWeight: '700',
-                        textTransform: 'none'
+                        textTransform: 'none',
+
+                        ':hover': {
+                            bgcolor: '#33539c',
+                        }
                     }}>
                     <HeaderOptions Icon={item.icon} title={item.title} />
                 </Button>
