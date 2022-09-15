@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/booking-clone/static/css/main.746f1836.css",
+    "main.js": "/booking-clone/static/js/main.5318ac57.js",
+    "index.html": "/booking-clone/index.html",
+    "main.746f1836.css.map": "/booking-clone/static/css/main.746f1836.css.map",
+    "main.5318ac57.js.map": "/booking-clone/static/js/main.5318ac57.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.746f1836.css",
+    "static/js/main.5318ac57.js"
+  ]
+}
