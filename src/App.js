@@ -10,12 +10,12 @@ import HotelList from "./pages/hotelList";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/hotellist" element={<HotelList />} />
+          <Route exact path='/' element={<Home />} />
+          <Route path='/hotellist' element={<HotelList />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
